@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculos</title>
+    <script src="../scripts/funcoes.js"></script>
+</head>
+
+<body>
+    <input type="number" placeholder="Informe numero" />
+    <input type="number" placeholder="Informe numero" />
+    <input type="text" id="operacao" placeholder="Informe a operação" />
+
+    <button onclick="validarPattern()">Calcular</button>
+    <hr>
+    <label></label>
+    <p> Digite 1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão</p>
+    <script>
+
+            function validarPattern() {
+            var n = document.getElementsByTagName("input")[0].value
+            var patternN = /[0-9]/;
+
+            let x = patternN.test(n)
+            console.log(x)
+        }
+        function calcular() {
+            var n1 = parseInt(document.getElementsByTagName("input")[0].value)
+            var n2 = parseInt(document.getElementsByTagName("input")[1].value)
+            var operacao = parseInt(document.getElementById("operacao").value)
+
+            if(operacao == 1){
+
+               var returno = soma(n1,n2)
+            }else if(operacao == 2){
+
+                var retorno = sub(n1,n2)
+            }else if(operacao == 3){
+
+                var retorno = mult(n1,n2)
+            }else if(operacao == 4){
+
+                var retorno = div(n1,n2)
+            }
+
+
+            document.getElementsByTagName("label")[0].innerHTML = retorno
+        }
+    </script>
+</body>
+
+</html>
